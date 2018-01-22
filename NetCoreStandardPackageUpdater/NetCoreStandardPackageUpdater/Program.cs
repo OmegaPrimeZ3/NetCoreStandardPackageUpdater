@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace NetCoreStandardPackageUpdater
 {
@@ -6,7 +7,7 @@ namespace NetCoreStandardPackageUpdater
     {
         static void Main(string[] args)
         {
-            // Check for args
+            
         }
     }
 }
