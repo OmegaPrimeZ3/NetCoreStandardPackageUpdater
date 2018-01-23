@@ -13,7 +13,7 @@ namespace NetCoreStandardPackageUpdater.CommandOptions
     /// </date>
     public class CommandOptionUpdate
     {
-        [Option("u", Required = true, HelpText = "Path to csproj file to update")]
+        [Option('u', "update", Required = true, HelpText = "Path to csproj file to update")]
         public string FilePath
         {
             get;

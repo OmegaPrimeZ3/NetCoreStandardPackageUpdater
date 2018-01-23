@@ -3,6 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Authors>Aaron Coppock</Authors>
+    <Company>ARC Development</Company>
+    <Product>NetCore &amp; Standard Package Updater</Product>
+    <Description>Console application for the unattended updating of all packages within a .NetCore or .NetStandard application</Description>
+    <StartupObject>NetCoreStandardPackageUpdater.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
