@@ -72,6 +72,7 @@ namespace NetCoreStandardPackageUpdater
                     foreach (ModelPackageReference packageReference in itemGroup.PackageReference)
                     {
                         string referenceName = packageReference.Include;
+                        string referenceVersion = packageReference.Version;
 
                         if (string.IsNullOrWhiteSpace(referenceName))
                         {
@@ -106,8 +107,10 @@ namespace NetCoreStandardPackageUpdater
 
                         Console.WriteLine($"Removed package {referenceName} from project {command.FilePath}");
 
-                        // Add the package back, the latest will be downloaded
-                        string addCommandArgs = $"add {command.FilePath} package {referenceName}";
+                        // There is a specific version to use or get the latest
+                        var addCommandArgs = referenceVersion.Contains("[")
+                            ? $"add {command.FilePath} package {referenceName} -v {referenceVersion}"
+                            : $"add {command.FilePath} package {referenceName}";
 
                         System.Diagnostics.Process addProcess = new System.Diagnostics.Process();
                         System.Diagnostics.ProcessStartInfo addStartInfo = new System.Diagnostics.ProcessStartInfo
