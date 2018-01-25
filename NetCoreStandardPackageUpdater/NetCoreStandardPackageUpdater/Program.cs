@@ -105,7 +105,7 @@ namespace NetCoreStandardPackageUpdater
                             return 1;
                         }
 
-                        Console.WriteLine($"Removed package {referenceName} from project {command.FilePath}");
+                        Console.WriteLine($"Removed package {referenceName}-{referenceVersion} from project {command.FilePath}");
 
                         // There is a specific version to use or get the latest
                         var addCommandArgs = referenceVersion.Contains("[")
@@ -137,7 +137,12 @@ namespace NetCoreStandardPackageUpdater
                             _exitCode = 1;
                             return 1;
                         }
-                        
+
+                        foreach (string response in addResponse)
+                        {
+                            Console.WriteLine(response);
+                        }
+
                         Console.WriteLine($"Added package {referenceName} from project {command.FilePath}");
                     }
                 }
