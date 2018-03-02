@@ -1,0 +1,1 @@
+﻿dotnet publish NetCoreStandardPackageUpdater.csproj -c Release --self-contained -r win10-x64
