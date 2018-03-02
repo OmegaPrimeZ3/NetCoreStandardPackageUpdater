@@ -121,6 +121,8 @@ namespace NetCoreStandardPackageUpdater
                             Arguments = addCommandArgs
                         };
 
+                        Console.WriteLine($"Executing Add: {addStartInfo.FileName} {addStartInfo.Arguments}");
+
                         addProcess.StartInfo = addStartInfo;
                         addProcess.Start();
 
@@ -143,7 +145,8 @@ namespace NetCoreStandardPackageUpdater
                             Console.WriteLine(response);
                         }
 
-                        Console.WriteLine($"Added package {referenceName} from project {command.FilePath}");
+                        Console.WriteLine($"Added package {referenceName} for project {command.FilePath}");
+                        addResponse.Clear();
                     }
                 }
             }
