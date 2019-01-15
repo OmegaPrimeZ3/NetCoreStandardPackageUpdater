@@ -133,7 +133,7 @@ namespace NetCoreStandardPackageUpdater
                             addResponse.Add(addProcess.StandardOutput.ReadLine());
                         }
                         
-                        if (!addResponse[addResponse.Count-1].Contains($"info : PackageReference for package '{referenceName}'"))
+                        if (!addResponse.Any(s=>s.Contains($"info : PackageReference for package '{referenceName}'")))
                         {
                             Console.WriteLine($"Error adding package reference {referenceName} to project {command.FilePath}");
                             _exitCode = 1;
